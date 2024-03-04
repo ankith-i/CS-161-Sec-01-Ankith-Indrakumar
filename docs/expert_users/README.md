@@ -11,7 +11,7 @@ These instructions will help you set up a copy of the project on your local mach
 ### Prerequisites
 
 Ensure you have the following installed:
-- Python 3.8 or newer
+- Python 3.9 or newer
 - Node.js 14.x or newer
 - PostgreSQL 12.x or newer
 - Git
@@ -24,7 +24,7 @@ Follow these steps to get your development environment running:
 
 1. **Clone the repository**
     ```bash
-    git clone https://github.com/<your-username>/map-coloring-puzzle-solver.git
+    git clone https://github.com/ankith-i/CS-161-Sec-01-Ankith-Indrakumar.git
     cd map-coloring-puzzle-solver
     ```
 
@@ -109,8 +109,8 @@ You can deploy the frontend to services like Netlify or Vercel by connecting you
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://github.com/<your-username>/map-coloring-puzzle-solver/CONTRIBUTING.md) for the process for submitting pull requests.
+Please read [CONTRIBUTING.md](https://github.com/ankith-i/CS-161-Sec-01-Ankith-Indrakumar.git/CONTRIBUTING.md) for the process for submitting pull requests.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/<your-username>/map-coloring-puzzle-solver/LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/ankith-i/CS-161-Sec-01-Ankith-Indrakumar.git/LICENSE.md) file for details.

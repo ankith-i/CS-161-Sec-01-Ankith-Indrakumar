@@ -27,7 +27,7 @@ Follow these steps to get your development environment running:
    ```
 3. **Run**
    ```bash
-   nmp run dev
+   npm run dev
    ```
 4. **See the app in localhost:5173**
 

@@ -8,13 +8,6 @@ The Map Coloring Puzzle Solver is a web application designed to challenge users 
 
 These instructions will help you set up a copy of the project on your local machine for development and testing purposes.
 
-### Prerequisites
-
-Ensure you have the following installed:
-- Python 3.9 or newer
-- Node.js 14.x or newer
-- PostgreSQL 12.x or newer
-- Git
 
 ### Installation
 
@@ -30,7 +23,7 @@ Follow these steps to get your development environment running:
 2. **Install**
    ```bash
    npm install --force
-   npm install firebase
+   npm install firebase --force
    ```
 3. **Run**
    ```bash

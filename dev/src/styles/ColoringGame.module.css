@@ -1,0 +1,187 @@
+/* App-wide styles */
+.app {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    background-color: #1e1e1e; /* Sleek dark background for contrast */
+    color: white;
+    padding-top: 20px; /* Space on top */
+  }
+  
+  /* Header styles */
+  .appHeader {
+    margin-bottom: 20px;
+  }
+  
+  /* Game container to align map grid to the center */
+  .gameContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px; /* Space between map and color controls */
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto; /* Center horizontally */
+  }
+  
+  .colorControls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* SVG map styles */
+  svg {
+    width: 50vw; /* Width relative to viewport width for responsiveness */
+    max-width: 500px; /* Maximum width to ensure the map is not too large */
+    height: auto; /* Height adjusts to the width while maintaining aspect ratio */
+    border: 3px solid #333; /* Subtle border for depth */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    background: #fff; /* White background to make map paths stand out */
+  }
+  
+  /* Styles for color buttons and action buttons */
+  .controls, .action-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Wrap controls for smaller screens */
+    gap: 10px; /* Gap between buttons */
+    margin-top: 20px; /* Margin from the SVG map */
+  }
+  
+  .actionBtn {
+    padding: 12px 18px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50; /* Primary action green */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px #999;
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+  }
+  
+  .actionBtn:hover {
+    background-color: #367C39; /* Darker shade on hover */
+    box-shadow: 0 6px #666;
+    transform: translateY(-2px); /* Slight move up */
+  }
+  
+  .actionBtn:active {
+    transform: translateY(1px); /* Move down on click */
+    box-shadow: 0 2px #666;
+  }
+  
+  /* Logout button styles */
+  .navbar {
+    width: 100%;
+    background-color: #282c34; /* Consistent dark theme */
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .navbarLogout {
+    padding: 10px 15px;
+    background-color: #d9534f; /* Red for logout */
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .navbarLogout:hover {
+    background-color: #c9302c; /* Darker red on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Modal styles for error and success messages */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s; /* Fade in effect */
+  }
+  
+  .modalContent {
+    background-color: #f4f4f4;
+    color: black;
+    border-radius: 15px;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Subtle shadow for pop-up effect */
+    animation: slideIn 0.5s; /* Slide-in animation */
+  }
+  
+  .closeButton {
+    font-size: 1.8em;
+    cursor: pointer;
+    color: #000;
+    float: right;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideIn {
+    from { transform: translateY(-20%); }
+    to { transform: translateY(0); }
+  }
+  
+  /* Responsive design considerations */
+  @media (max-width: 600px) {
+    svg {
+      width: 80vw; /* Smaller view width for very small devices */
+    }
+  
+    .controls, .action-buttons {
+      flex-direction: column; /* Stack buttons vertically on small screens */
+    }
+  
+    .actionBtn {
+      width: 80%; /* Full-width buttons for easier touch targets */
+      margin: 10px auto; /* Center buttons with auto margin */
+    }
+  }
+  
+  .timer {
+    font-size: 20px;
+    color: #FFD700; /* Gold color for visibility */
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  .navbarAnalytics {
+    padding: 10px 15px;
+    background-color: #007bff; /* Blue for Analytics */
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    margin-right: 10px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .navbarAnalytics:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  

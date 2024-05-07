@@ -82,6 +82,23 @@ button:active, .btn:active {
   outline: none;
 }
 
+/* Password Toggle Icon */
+.password-toggle {
+  cursor: pointer;
+  background-color: #f3f3f3;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.password-toggle svg {
+  width: 20px;
+  height: 20px;
+}
+
 /* Form Fade-in Effect */
 .fade-effect {
   animation: fadeIn 1.5s ease-out;

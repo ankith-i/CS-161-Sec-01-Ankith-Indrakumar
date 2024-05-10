@@ -26,6 +26,7 @@ Follow these steps to get your development environment running:
    npm install firebase --force
    npm install axios --force
    pip install flask firebase-admin
+   pip install python-dotenv
    ```
 3. **Run**
    ```bash

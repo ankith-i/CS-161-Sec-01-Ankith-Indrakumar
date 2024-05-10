@@ -1,21 +1,45 @@
 from flask import Flask, request, jsonify
-from dotenv import load_dotenv
-import os
-import json
 from flask_cors import CORS
+import os
 import firebase_admin
 from firebase_admin import credentials, firestore
+from dotenv import load_dotenv
 
-# Load environment variables from .env file
+app = Flask(__name__)
+# Properly setup CORS for all domains on all routes under /api/
+CORS(app, resources={r"/api/*": {"origins": "*"}})
+
 load_dotenv()
 
-# Get the JSON credentials from environment variable
-json_credentials = os.getenv('FIREBASE_CREDENTIALS')
-parsed_credentials = json.loads(json_credentials)
+# Fetch the credentials from the environment variable
+private_key_str = os.getenv('FIREBASE_PRIVATE_KEY')
+if not private_key_str:
+    raise ValueError("FIREBASE_PRIVATE_KEY is not set in the environment variables")
+
+# Replace '\\n' with '\n' to format the private key correctly
+private_key_str = private_key_str.replace('\\n', '\n')
+
+# Prepare credentials dictionary
+cred_dict = {
+    "type": "service_account",
+    "project_id": "map-coloring-18ff5",  # Replace with your project ID
+    "private_key_id": "0b4b8fba947112d7a3259ba2dde173237b8cd189",  # Replace with your private key ID
+    "private_key": private_key_str,
+    "client_email": "firebase-adminsdk-ph9s8@map-coloring-18ff5.iam.gserviceaccount.com",
+    "client_id": "118241003660103584798",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-ph9s8%40map-coloring-18ff5.iam.gserviceaccount.com"
+}
 
 # Use the credentials to initialize Firebase
-cred = credentials.Certificate(parsed_credentials)
-firebase_admin.initialize_app(cred)
+try:
+    cred = credentials.Certificate(cred_dict)
+    firebase_admin.initialize_app(cred)
+except ValueError as e:
+    print(f"Error initializing Firebase Admin: {e}")
+    raise
 
 # Now you can use Firebase as needed, for example to access Firestore
 db = firestore.client()
@@ -53,33 +77,22 @@ def log_action():
 
 @app.route('/api/get-summary', methods=['GET'])
 def get_summary():
-    try:
-        # Retrieve the user ID from the query parameters
-        user_id = request.args.get('user_id')
-        if not user_id:
-            raise ValueError('User ID is required')
+    user_id = request.args.get('user_id')
+    if not user_id:
+        return jsonify({'status': 'error', 'message': 'User ID is required'}), 400
 
-        # Get the user's document from Firestore
-        user_doc_ref = db.collection(ACTIVITY_COLLECTION).document(user_id)
-        user_doc = user_doc_ref.get()
-
-        # Initialize the actions list
-        if user_doc.exists:
-            actions = user_doc.to_dict().get('actions', [])
-        else:
-            actions = []
-
-        # Calculate the summary of user actions
+    user_doc_ref = db.collection(ACTIVITY_COLLECTION).document(user_id)
+    user_doc = user_doc_ref.get()
+    if user_doc.exists:
+        actions = user_doc.to_dict().get('actions', [])
         summary = {
             'total_actions': len(actions),
             'color_changes': sum(1 for action in actions if action['type'] == 'color_change'),
             'hints_requested': sum(1 for action in actions if action['type'] == 'hint_request')
         }
-
         return jsonify({'status': 'success', 'summary': summary}), 200
+    else:
+        return jsonify({'status': 'error', 'message': 'No actions found for this user'}), 404
 
-    except Exception as e:
-        return jsonify({'status': 'error', 'message': str(e)}), 500
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True)

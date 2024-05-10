@@ -1,15 +1,23 @@
 from flask import Flask, request, jsonify
+from dotenv import load_dotenv
+import os
+import json
 from flask_cors import CORS
 import firebase_admin
 from firebase_admin import credentials, firestore
 
-# Initialize Flask application
-app = Flask(__name__)
-CORS(app)
+# Load environment variables from .env file
+load_dotenv()
 
-# Initialize Firebase Admin SDK with your credentials
-cred = credentials.Certificate('C:/Users/ankit/Desktop/Software Engineering Project/Final/CS-161-Sec-01-Ankith-Indrakumar/dev/map-coloring-firebase-adminsdk-d3by0-35f24e89cf.json')
+# Get the JSON credentials from environment variable
+json_credentials = os.getenv('FIREBASE_CREDENTIALS')
+parsed_credentials = json.loads(json_credentials)
+
+# Use the credentials to initialize Firebase
+cred = credentials.Certificate(parsed_credentials)
 firebase_admin.initialize_app(cred)
+
+# Now you can use Firebase as needed, for example to access Firestore
 db = firestore.client()
 
 # Firestore collection name for user activities

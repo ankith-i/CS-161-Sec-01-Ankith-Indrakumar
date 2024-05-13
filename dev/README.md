@@ -1,50 +1,44 @@
 # Map Coloring Puzzle Solver
 
-## Project Overview
+## Description
 
-This project aims to develop a web-based Map Coloring Puzzle Solver that leverages Flask and React to offer an educational and interactive experience. It targets enthusiasts in puzzles, computer science, and mathematics, focusing on engaging users through problem-solving and algorithmic thinking.
+The Map Coloring Puzzle Solver is a web application designed to challenge users with the task of coloring a map such that no two adjacent regions have the same color. It utilizes Flask for backend logic, React for the user interface, and PostgreSQL for data storage.
 
-## Repository URL
+## Getting Started
 
-[Map Coloring Puzzle Solver](https://github.com/ankith-i/CS-161-Sec-01-Ankith-Indrakumar)
+These instructions will help you set up a copy of the project on your local machine for development and testing purposes.
 
-## Milestones
 
-- **Week 1: M1 (Setup and Initial Deployment)**
-  - Setup basic Flask app structure, initial deployment to Heroku.
-- **Week 2: M2 (Game Logic Implementation)**
-  - Implement the map coloring logic and a simple user interface.
-- **Week 3: M3 (User Accounts and Persistence)**
-  - Add functionalities for user registration, login, and saving game states.
-- **Week 4: M4 (Solver and Hints)**
-  - Integrate the backtracking algorithm for solving puzzles and providing hints.
-- **Week 5: M5 (Final Touches and Deployment)**
-  - Final testing, UI/UX enhancements, and deployment.
+### Installation
 
-## Core Engine Algorithms/AI Schemes
+Follow these steps to get your development environment running:
 
-1. Utilizes a backtracking algorithm for solving the map coloring puzzle, suitable for demonstrating constraint satisfaction problem-solving.
+####  Setup
 
-## Market Space and Selling Points
+1. **Clone the repository**
+    ```bash
+    git clone https://github.com/ankith-i/CS-161-Sec-01-Ankith-Indrakumar.git
+    cd dev
+    ```
+2. **Install**
+   ```bash
+   npm install --force
+   npm install firebase --force
+   npm install axios --force
+   pip install flask firebase-admin
+   ```
+3. **Run**
+   ```bash
+   npm run dev
+   ```
+4. **See the app in localhost:5173**
 
-1. Aimed at the educational market, targeting puzzle, computer science, and mathematics enthusiasts.
-2. Offers educational value through interactive problem-solving and insights into algorithmic thinking.
 
-## Tech Stack
 
-### Frontend Technologies
+## Contributing
 
-1. **React**: For building a dynamic and responsive user interface. React's component-based architecture enables efficient updates and rendering.
-2. **HTML/CSS**: Used within React components for structuring and styling. Modern CSS frameworks or custom styles ensure a polished look.
-3. **JavaScript (ES6+)**: Adds interactivity, state management, and event handling.
-4. **Bootstrap or Tailwind CSS (optional)**: For developing responsive and visually appealing user interfaces.
+Please read [CONTRIBUTING.md](https://github.com/ankith-i/CS-161-Sec-01-Ankith-Indrakumar.git/CONTRIBUTING.md) for the process for submitting pull requests.
 
-### Backend Technologies
+## License
 
-1. **Flask**: The backend framework handles HTTP requests, API endpoints, game logic, user authentication, and database interaction.
-2. **Python**: The primary language for backend development, including the puzzle solver algorithm.
-3. **SQLite/PostgreSQL**: SQLite for development; PostgreSQL is recommended for production on Heroku.
-4. **Flask-Login/Flask-JWT-Extended**: Manages user sessions and authentication, with JWT for secure API communication.
-5. **Flask-SQLAlchemy**: The ORM tool simplifies database operations.
-6. **Heroku**: Hosts the full-stack application.
-7. **Git**: Manages version control and facilitates deployments through Heroku's Git integration.
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/ankith-i/CS-161-Sec-01-Ankith-Indrakumar.git/LICENSE.md) file for details.

@@ -48,3 +48,7 @@ This project aims to develop a web-based Map Coloring Puzzle Solver that leverag
 5. **Flask-SQLAlchemy**: The ORM tool simplifies database operations.
 6. **Heroku**: Hosts the full-stack application.
 7. **Git**: Manages version control and facilitates deployments through Heroku's Git integration.
+
+### Deployed link for accessing the application
+
+**http://18.226.87.224/**

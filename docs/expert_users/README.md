@@ -8,6 +8,7 @@ The Map Coloring Puzzle Solver is a web application designed to challenge users 
 
 These instructions will help you set up a copy of the project on your local machine for development and testing purposes.
 
+
 ### Installation
 
 Follow these steps to get your development environment running:
@@ -18,17 +19,28 @@ Follow these steps to get your development environment running:
     ```bash
     git clone https://github.com/ankith-i/CS-161-Sec-01-Ankith-Indrakumar.git
     cd dev
+    cd frontend # And run cmd under Frontend
+    cd backend  # And run cmd under Backend
     ```
 2. **Install**
+   
+   Frontend:
    ```bash
    npm install --force
    npm install firebase --force
+   npm install axios --force
    ```
-3. **Run**
+   Backend:
    ```bash
-   nmp run dev
+   pip install flask firebase-admin
    ```
-4. **See the app in localhost:5173**
+4. **Run**
+   ```bash
+   npm run dev #cmd to run frontend
+   python app.py #cmd to run backend
+   ```
+5. **See the app in localhost:5173**
+6. **See the deployed application in http://18.226.87.224/**
 
 
 

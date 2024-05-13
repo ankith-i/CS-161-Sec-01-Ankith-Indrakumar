@@ -46,7 +46,7 @@ This project aims to develop a web-based Map Coloring Puzzle Solver that leverag
 3. **SQLite/PostgreSQL**: SQLite for development; PostgreSQL is recommended for production on Heroku.
 4. **Flask-Login/Flask-JWT-Extended**: Manages user sessions and authentication, with JWT for secure API communication.
 5. **Flask-SQLAlchemy**: The ORM tool simplifies database operations.
-6. **Heroku**: Hosts the full-stack application.
+6. **AWS**: Hosts the full-stack application.
 7. **Git**: Manages version control and facilitates deployments through Heroku's Git integration.
 
 ### Deployed link for accessing the application

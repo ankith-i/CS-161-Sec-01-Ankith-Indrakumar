@@ -23,6 +23,7 @@ Follow these steps to get your development environment running:
     cd backend  # And run cmd under Backend
     ```
 2. **Install**
+   
    Frontend:
    ```bash
    npm install --force
@@ -30,7 +31,7 @@ Follow these steps to get your development environment running:
    npm install axios --force
    ```
    Backend:
-   ```
+   ```bash
    pip install flask firebase-admin
    ```
 4. **Run**

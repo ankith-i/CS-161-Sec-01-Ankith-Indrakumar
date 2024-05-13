@@ -12,12 +12,14 @@ Open your web browser and navigate to the application URL. You will be greeted w
 
 ### User Registration
 
-To save your progress and compete in multiplayer modes, you'll need to create an account:
+To save your progress, you'll need to create an account:
 
 1. Click on the "Register" or "Sign Up" button on the homepage.
 2. Fill in the required fields, including a valid email address and a password.
 3. Submit the form to create your account.
 4. You will be automatically logged in or may need to log in manually using your new credentials.
+5. You can even use Google Single Sign-on to login or register
+6. You can even use Guest login in navabar to login without creating account - but your actions/analytics won't be saved.
 
 ### User Login
 
@@ -26,6 +28,8 @@ If you already have an account:
 1. Click on the "Login" button on the homepage.
 2. Enter your email address and password.
 3. Click "Submit" to access your account.
+4. Use Google Single Sign-on if you registerd with it.
+5. Use Guest Login if you don't want account.
 
 ## Playing the Game
 
@@ -42,6 +46,14 @@ If you already have an account:
 
 - Click the "Hint" button for suggestions on coloring regions without breaking the rules.
 - Use the "Solve" button to automatically color all regions correctly.
+- You can even use the partial solution option if ou don't want the entire solution.
+- You can even reset the colors you colored if you are stuck and want to re-color.
+
+###Analytics
+- You can even the analytics of your game here.
+  
+###Logout
+- You can use this option to logout.
 
 ### Saving Your Progress
 

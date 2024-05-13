@@ -19,19 +19,27 @@ Follow these steps to get your development environment running:
     ```bash
     git clone https://github.com/ankith-i/CS-161-Sec-01-Ankith-Indrakumar.git
     cd dev
+    cd frontend # And run cmd under Frontend
+    cd backend  # And run cmd under Backend
     ```
 2. **Install**
+   Frontend:
    ```bash
    npm install --force
    npm install firebase --force
    npm install axios --force
+   ```
+   Backend:
+   ```
    pip install flask firebase-admin
    ```
-3. **Run**
+4. **Run**
    ```bash
-   npm run dev
+   npm run dev #cmd to run frontend
+   python app.py #cmd to run backend
    ```
-4. **See the app in localhost:5173**
+5. **See the app in localhost:5173**
+6. **See the deployed application in http://18.226.87.224/**
 
 
 
